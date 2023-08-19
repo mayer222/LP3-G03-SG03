@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+string obtenerPremio(int numero) {
+    string premio = "";
+    switch(numero) {
+        case 1: premio = "un pasaje al caribe"; break;
+        case 2: premio = "una visita al museo"; break;
+        case 3: premio = "una entrada al cine"; break;
+    }
+    return premio;
+}
+int main() {
+    int numeroAdivinar = 1 + rand() % 3; // Genera un número aleatorio entre 1 y 3
+    cout << "Adivina el número (entre 1 y 3): ";
+    int numeroUsuario;
+    cin >> numeroUsuario;
+    if (numeroUsuario >= 1 && numeroUsuario <= 3) {
+        if (numeroUsuario == numeroAdivinar) {
+            string premio = obtenerPremio(numeroUsuario);
+            cout << "¡Adivinaste! Ganaste " << premio << endl;
+        } else {
+            cout << "No adivinaste. El número correcto era " << numeroAdivinar << endl;
+        }
+    } else {
+        cout << "Número fuera del rango válido." << endl;
+    }
+
+    return 0;
+
+
+}
