@@ -1,5 +1,4 @@
 #include <iostream>
-<<<<<<< HEAD
 using namespace std;
 
 string obtenerPremio(int numero) {
@@ -28,46 +27,3 @@ int main() {
     }
     return 0;
 }
-=======
-#include <cstdlib> // Necesario para la funcion rand()
-using namespace std;
-
-string obtenerPremio(int vidas) {
-    string premio = "";
-    if (vidas == 1) {
-        premio = "un pasaje al caribe";
-    } else if (vidas == 2) {
-        premio = "una visita al museo";
-    }
-    return premio;
-}
-
-int main() {
-    int numeroAdivinar = 1 + rand() % 3; // Genera un numero aleatorio entre 1 y 3
-    cout << "adivina el número (entre 1 y 3): ";
-    int numeroUsuario;
-    cin >> numeroUsuario;
-
-    int vidasUtilizadas = 1;
-
-    while (numeroUsuario < 1 || numeroUsuario > 3) {
-        cout << "numero fuera del rango válido. Ingresa un numero entre 1 y 3: ";
-        cin >> numeroUsuario;
-    }
-
-    while (numeroUsuario != numeroAdivinar && vidasUtilizadas < 2) {
-        cout << "no adivinaste, te queda " << 2 - vidasUtilizadas << " intento(s), intenta nuevamente: ";
-        cin >> numeroUsuario;
-        vidasUtilizadas++;
-    }
-
-    if (numeroUsuario == numeroAdivinar) {
-        string premio = obtenerPremio(vidasUtilizadas);
-        cout << "adivinaste! ganaste " << premio << endl;
-    } else {
-        cout << "no adivinaste en 2 intentos. El numero  era " << numeroAdivinar << endl;
-    }
-
-    return 0;
-}
->>>>>>> rama1
