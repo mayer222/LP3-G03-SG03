@@ -10,14 +10,14 @@ package automovil;
  */
 class Automovil {
     private String placa;
-    private int numeroPuertas;
+    private int numPuertas;
     private String marca;
     private String modelo;
     private Motor motor;
 
-    public Automovil(String placa, int numeroPuertas, String marca, String modelo) {
+    public Automovil(String placa, int numPuertas, String marca, String modelo) {
         this.placa = placa;
-        this.numeroPuertas = numeroPuertas;
+        this.numPuertas = numPuertas;
         this.marca = marca;
         this.modelo = modelo;
     }
@@ -30,12 +30,12 @@ class Automovil {
         this.placa = placa;
     }
 
-    public int getNumeroPuertas() {
-        return numeroPuertas;
+    public int getnumPuertas() {
+        return numPuertas;
     }
 
-    public void setNumeroPuertas(int numeroPuertas) {
-        this.numeroPuertas = numeroPuertas;
+    public void setnumPuertas(int numPuertas) {
+        this.numPuertas = numPuertas;
     }
 
     public String getMarca() {
@@ -64,7 +64,7 @@ class Automovil {
 
     @Override
     public String toString() {
-        return "Automovil [Placa: " + placa + ", Numero de Puertas: " + numeroPuertas + ", Marca: " + marca + ", Modelo: " + modelo + ", Motor: " + motor + "]";
+        return "Automovil [Placa: " + placa + ", num de Puertas: " + numPuertas + ", Marca: " + marca + ", Modelo: " + modelo + ", Motor: " + motor + "]";
     }
 }
 

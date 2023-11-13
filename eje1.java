@@ -16,20 +16,20 @@ public class Persona {
         this.apellido = apellido;
         this.tipoCliente = tipoCliente;
         // Determinar el número de cuenta
-        String numeroCuenta;
+        String numCuenta;
         if (tipoCliente == 'B') {
-            numeroCuenta = "B" + cuentaCorrelativaB;
+            numCuenta = "B" + cuentaCorrelativaB;
             cuentaCorrelativaB++;
         } else if (tipoCliente == 'E') {
 
-            numeroCuenta = "E" + cuentaCorrelativaE;
+            numCuenta = "E" + cuentaCorrelativaE;
             cuentaCorrelativaE++;
         } else {
-            numeroCuenta = "C" + cuentaCorrelativaC;
+            numCuenta = "C" + cuentaCorrelativaC;
             cuentaCorrelativaC++;
 
         }
-        this.cuenta = new Cuenta(numeroCuenta, 50); // El saldo mínimo es 50 soles
+        this.cuenta = new Cuenta(numCuenta, 50); // El saldo mínimo es 50 soles
     }
     // Getter y setter para tipoCliente
     public char getTipoCliente() {
@@ -54,7 +54,7 @@ public class Persona {
     // Implementación del método toString
     @Override
     public String toString() {
-        return "Cliente: " + id + "\nTipo: " + tipoCliente + "\nNombre: " + nombre + " " + apellido + "\nNúmero de cuenta: " + cuenta.getNumero() + "\nSaldo: " + cuenta.getSaldo();
+        return "Cliente: " + id + "\nTipo: " + tipoCliente + "\nNombre: " + nombre + " " + apellido + "\nNúmero de cuenta: " + cuenta.getnum() + "\nSaldo: " + cuenta.getSaldo();
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -117,10 +117,10 @@ public class Persona {
     }
 }
 class Cuenta {
-    private String numero;
+    private String num;
     private double saldo;
-    public Cuenta(String numero, double saldo) {
-        this.numero = numero;
+    public Cuenta(String num, double saldo) {
+        this.num = num;
         // Verificar que el saldo sea al menos 50 soles
         if (saldo >= 50) {
             this.saldo = saldo;
@@ -129,8 +129,8 @@ class Cuenta {
         }
     }
     // Getter para número de cuenta
-    public String getNumero() {
-        return numero;
+    public String getnum() {
+        return num;
     }
     // Getter para saldo
     public double getSaldo() {
@@ -155,7 +155,7 @@ class Cuenta {
     // Implementación del método toString
     @Override
     public String toString() {
-        return "Número de cuenta: " + numero + "\nSaldo: " + saldo;
+        return "Número de cuenta: " + num + "\nSaldo: " + saldo;
     }
 }
 

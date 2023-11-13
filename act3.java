@@ -11,8 +11,8 @@ class Persona {
         this.nombre = nombre;
         this.apellido = apellido;
         // Determinar el número de cuenta (podrías generar un número único aquí)
-        int numeroCuenta = 1; // Por ejemplo, asignamos un valor temporal
-        this.cuenta = new Cuenta(numeroCuenta);
+        int numCuenta = 1; // Por ejemplo, asignamos un valor temporal
+        this.cuenta = new Cuenta(numCuenta);
     }
 
     public int getId() {
@@ -33,20 +33,20 @@ class Persona {
     }
 
     public class Cuenta {
-        private int numero;
+        private int num;
         private double saldo;
 
-        public Cuenta(int numero) {
-            this(numero, 0);
+        public Cuenta(int num) {
+            this(num, 0);
         }
 
-        public Cuenta(int numero, double saldo) {
-            this.numero = numero;
+        public Cuenta(int num, double saldo) {
+            this.num = num;
             this.saldo = saldo;
         }
 
-        public int getNumero() {
-            return numero;
+        public int getnum() {
+            return num;
         }
 
         public double getSaldo() {
@@ -55,7 +55,7 @@ class Persona {
 
         @Override
         public String toString() {
-            return "Número de Cuenta: " + numero + ", Saldo: " + saldo;
+            return "Número de Cuenta: " + num + ", Saldo: " + saldo;
         }
     }
 }

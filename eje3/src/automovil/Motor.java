@@ -10,20 +10,20 @@ package automovil;
  */
 
 class Motor {
-    private String numeroMotor;
+    private String numMotor;
     private int revolucionesPorMinuto;
 
-    public Motor(String numeroMotor, int revolucionesPorMinuto) {
-        this.numeroMotor = numeroMotor;
+    public Motor(String numMotor, int revolucionesPorMinuto) {
+        this.numMotor = numMotor;
         this.revolucionesPorMinuto = revolucionesPorMinuto;
     }
 
-    public String getNumeroMotor() {
-        return numeroMotor;
+    public String getnumMotor() {
+        return numMotor;
     }
 
-    public void setNumeroMotor(String numeroMotor) {
-        this.numeroMotor = numeroMotor;
+    public void setnumMotor(String numMotor) {
+        this.numMotor = numMotor;
     }
 
     public int getRevolucionesPorMinuto() {
@@ -36,6 +36,6 @@ class Motor {
 
     @Override
     public String toString() {
-        return "Motor [Numero de Motor: " + numeroMotor + ", Revoluciones por Minuto: " + revolucionesPorMinuto + "]";
+        return "Motor [num de Motor: " + numMotor + ", Revoluciones por Minuto: " + revolucionesPorMinuto + "]";
     }
 }

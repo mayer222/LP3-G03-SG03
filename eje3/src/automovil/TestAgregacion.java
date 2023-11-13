@@ -28,8 +28,8 @@ public class TestAgregacion {
                 case 1:
                     System.out.print("Ingrese la placa del automovil: ");
                     String placa = scanner.next();
-                    System.out.print("Ingrese el numero de puertas: ");
-                    int numeroPuertas = scanner.nextInt();
+                    System.out.print("Ingrese el num de puertas: ");
+                    int numPuertas = scanner.nextInt();
                     System.out.print("Ingrese la marca del automovil: ");
                     String marca = scanner.next();
                     System.out.print("Ingrese el modelo del automovil: ");
@@ -41,14 +41,14 @@ public class TestAgregacion {
                     Motor motor = null;
 
                     if (tieneMotor.equalsIgnoreCase("S")) {
-                        System.out.print("Ingrese el numero de motor: ");
-                        String numeroMotor = scanner.next();
+                        System.out.print("Ingrese el num de motor: ");
+                        String numMotor = scanner.next();
                         System.out.print("Ingrese las revoluciones por minuto del motor: ");
                         int revolucionesPorMinuto = scanner.nextInt();
-                        motor = new Motor(numeroMotor, revolucionesPorMinuto);
+                        motor = new Motor(numMotor, revolucionesPorMinuto);
                     }
 
-                    Automovil automovil = new Automovil(placa, numeroPuertas, marca, modelo);
+                    Automovil automovil = new Automovil(placa, numPuertas, marca, modelo);
                     automovil.setMotor(motor);
                     automoviles.add(automovil);
                     System.out.println("Automovil agregado con exito.");
@@ -60,7 +60,7 @@ public class TestAgregacion {
                         for (int i = 0; i < automoviles.size(); i++) {
                             System.out.println((i + 1) + ". " + automoviles.get(i));
                         }
-                        System.out.print("Seleccione el numero del automovil que desea eliminar: ");
+                        System.out.print("Seleccione el num del automovil que desea eliminar: ");
                         int indiceEliminar = scanner.nextInt();
                         if (indiceEliminar >= 1 && indiceEliminar <= automoviles.size()) {
                             automoviles.remove(indiceEliminar - 1);

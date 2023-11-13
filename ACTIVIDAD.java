@@ -1,12 +1,12 @@
 interface PorPagar {
     double obtenerMontoPago();}
 class Factura implements PorPagar {
-    private String numeroPieza;
+    private String numPieza;
     private String descripcionPieza;
     private int cantidad;
     private double precioPorArticulo;
-    public Factura(String numeroPieza, String descripcionPieza, int cantidad, double precioPorArticulo) {
-        this.numeroPieza = numeroPieza;
+    public Factura(String numPieza, String descripcionPieza, int cantidad, double precioPorArticulo) {
+        this.numPieza = numPieza;
         this.descripcionPieza = descripcionPieza;
         establecerCantidad(cantidad);
         establecerPrecioPorArticulo(precioPorArticulo);}
@@ -36,27 +36,27 @@ class Factura implements PorPagar {
     }
     @Override
     public String toString() {
-        return String.format("Factura:\nNúmero de pieza: %s (%s)\nCantidad: %d\nPrecio por artículo: $%.2f", numeroPieza, descripcionPieza, cantidad, precioPorArticulo);
+        return String.format("Factura:\nNúmero de pieza: %s (%s)\nCantidad: %d\nPrecio por artículo: $%.2f", numPieza, descripcionPieza, cantidad, precioPorArticulo);
     }
 }
 abstract class Empleado implements PorPagar {
     private String primerNombre;
     private String apellidoPaterno;
-    private String numeroDeSeguroSocial;
-    public Empleado(String primerNombre, String apellidoPaterno, String numeroDeSeguroSocial) {
+    private String numDeSeguroSocial;
+    public Empleado(String primerNombre, String apellidoPaterno, String numDeSeguroSocial) {
         this.primerNombre = primerNombre;
         this.apellidoPaterno = apellidoPaterno;
-        this.numeroDeSeguroSocial = numeroDeSeguroSocial;
+        this.numDeSeguroSocial = numDeSeguroSocial;
     }
     @Override
     public String toString() {
-        return String.format("Empleado:\nNombre: %s %s\nNúmero de seguro social: %s", primerNombre, apellidoPaterno, numeroDeSeguroSocial);
+        return String.format("Empleado:\nNombre: %s %s\nNúmero de seguro social: %s", primerNombre, apellidoPaterno, numDeSeguroSocial);
     }
 }
 class EmpleadoAsalariado extends Empleado {
     private double salarioSemanal;
-    public EmpleadoAsalariado(String primerNombre, String apellidoPaterno, String numeroDeSeguroSocial, double salarioSemanal) {
-        super(primerNombre, apellidoPaterno, numeroDeSeguroSocial);
+    public EmpleadoAsalariado(String primerNombre, String apellidoPaterno, String numDeSeguroSocial, double salarioSemanal) {
+        super(primerNombre, apellidoPaterno, numDeSeguroSocial);
         establecerSalarioSemanal(salarioSemanal);
     }
     public void establecerSalarioSemanal(double salarioSemanal) {
@@ -76,17 +76,17 @@ class EmpleadoAsalariado extends Empleado {
 }
 //clase prestamo
 class Prestamo implements PorPagar {
-    private int numeroDeCuotas;
+    private int numDeCuotas;
     private double montoDeCuota;
-    public Prestamo(int numeroDeCuotas, double montoDeCuota) {
-        this.numeroDeCuotas = numeroDeCuotas;
+    public Prestamo(int numDeCuotas, double montoDeCuota) {
+        this.numDeCuotas = numDeCuotas;
         this.montoDeCuota = montoDeCuota;
     }
-    public int getNumeroDeCuotas() {
-        return numeroDeCuotas;
+    public int getnumDeCuotas() {
+        return numDeCuotas;
     }
-    public void setNumeroDeCuotas(int numeroDeCuotas) {
-        this.numeroDeCuotas = numeroDeCuotas;
+    public void setnumDeCuotas(int numDeCuotas) {
+        this.numDeCuotas = numDeCuotas;
     }
     public double getMontoDeCuota() {
         return montoDeCuota;
@@ -96,11 +96,11 @@ class Prestamo implements PorPagar {
     }
     @Override
     public double obtenerMontoPago() {
-        return numeroDeCuotas * montoDeCuota;
+        return numDeCuotas * montoDeCuota;
     }
     @Override
     public String toString() {
-        return String.format("Prestamo:\nNúmero de cuotas: %d\nMonto de cuota: $%.2f", numeroDeCuotas, montoDeCuota);
+        return String.format("Prestamo:\nNúmero de cuotas: %d\nMonto de cuota: $%.2f", numDeCuotas, montoDeCuota);
     }
 }
 class PruebaInterfazPorPagar {

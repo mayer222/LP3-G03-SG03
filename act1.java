@@ -21,10 +21,10 @@ class Persona {
     }
 }
 class Cuenta {
-    private int numero;
+    private int num;
     private double saldo;
-    public Cuenta(int numero) {
-        this.numero = numero;
+    public Cuenta(int num) {
+        this.num = num;
         this.saldo = 0;
     }
     public double getSaldo() {
@@ -34,7 +34,7 @@ class Cuenta {
         this.saldo = saldo;
     }
     public String toString() {
-        return "Cuenta [numero=" + numero + ", saldo=" + saldo + "]";
+        return "Cuenta [num=" + num + ", saldo=" + saldo + "]";
     }
 }
 public class TestComposicion {
